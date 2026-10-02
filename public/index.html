@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bom dia, na hora certa · Bot de pedidos</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/test.css">
+  <link rel="stylesheet" href="/weekdays.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="brand"><span class="brand-mark">9<span>h</span></span><span>Bot de pedidos</span></div>
+      <div id="connection-pill" class="connection-pill">Conectando…</div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div>
+          <p class="intro-detail">Sua mensagem da manhã</p>
+          <h1>Bom dia,<br>na hora certa.</h1>
+          <p class="intro-copy">Uma mensagem cordial para seus clientes, enviada aos grupos que você escolher de segunda a sexta, às 9h.</p>
+        </div>
+        <div class="schedule-stamp" aria-label="Agendamento: segunda a sexta às 9 horas">
+          <span>Seg — Sex</span>
+          <strong>09:00</strong>
+          <small>Horário de São Paulo</small>
+        </div>
+      </section>
+
+      <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+
+      <div class="workspace">
+        <div class="controls">
+          <section class="panel connection-panel">
+            <div class="section-heading"><span class="step">1</span><div><h2>Conectar o WhatsApp</h2><p>Use o número que participa dos grupos.</p></div></div>
+            <div id="connection-content" class="connection-content">Aguardando conexão…</div>
+          </section>
+
+          <section class="panel">
+            <div class="section-heading"><span class="step">2</span><div><h2>Escolher os grupos</h2><p>A mensagem irá somente para os grupos marcados.</p></div></div>
+            <div class="groups-toolbar"><span id="group-count">Nenhum grupo selecionado</span><button id="refresh-groups" class="text-button" type="button">Atualizar grupos</button></div>
+            <div id="group-list" class="group-list"><p class="empty">Conecte o WhatsApp para ver seus grupos.</p></div>
+          </section>
+
+          <section class="panel">
+            <div class="section-heading"><span class="step">3</span><div><h2>Mensagens da semana</h2><p>Um texto diferente a cada dia útil. Você pode ajustá-los quando quiser.</p></div></div>
+            <div id="weekday-messages" class="weekday-messages"></div>
+          </section>
+
+          <section class="activation">
+            <label class="switch-row" for="enabled"><span><strong>Ativar envios automáticos</strong><small>O aplicativo precisa estar aberto e conectado às 9h.</small></span><input id="enabled" type="checkbox" role="switch"></label>
+            <button id="save" class="save-button" type="button">Salvar agendamento</button>
+            <p id="save-status" class="save-status" role="status"></p>
+          </section>
+
+          <section class="panel test-panel">
+            <div class="section-heading"><span class="step">✓</span><div><h2>Fazer um teste agora</h2><p>Envia uma mensagem identificada como teste a apenas um grupo salvo.</p></div></div>
+            <label for="test-group">Grupo que receberá o teste</label>
+            <select id="test-group"><option value="">Escolha um grupo salvo</option></select>
+            <label for="test-day">Mensagem que será testada</label>
+            <select id="test-day">
+              <option value="Mon">Segunda-feira</option><option value="Tue">Terça-feira</option><option value="Wed">Quarta-feira</option><option value="Thu">Quinta-feira</option><option value="Fri">Sexta-feira</option>
+            </select>
+            <button id="send-test" class="test-button" type="button" disabled>Enviar mensagem de teste</button>
+            <p id="test-status" class="test-status" role="status"></p>
+          </section>
+        </div>
+
+        <aside class="side">
+          <section class="preview-panel">
+            <div class="preview-top"><span>Prévia da mensagem</span><select id="preview-day" aria-label="Dia da prévia"><option value="Mon">Segunda</option><option value="Tue">Terça</option><option value="Wed">Quarta</option><option value="Thu">Quinta</option><option value="Fri">Sexta</option></select></div>
+            <div class="chat-area"><div class="chat-bubble"><p id="preview-text"></p><span>09:00 ✓✓</span></div></div>
+            <div class="preview-bottom">Como o texto aparecerá no grupo</div>
+          </section>
+          <section class="history-panel">
+            <h2>Últimos envios</h2>
+            <div id="history-list"><p class="empty">Os envios aparecerão aqui.</p></div>
+          </section>
+        </aside>
+      </div>
+    </main>
+    <footer>Bot de pedidos · Funcionando neste computador</footer>
+  </div>
+</body>
+</html>

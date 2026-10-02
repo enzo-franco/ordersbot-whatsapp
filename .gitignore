@@ -1,0 +1,7 @@
+node_modules/
+.pnpm-store/
+data/
+.wwebjs_auth/
+.wwebjs_cache/
+.env
+*.log

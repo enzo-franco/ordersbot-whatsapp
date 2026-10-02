@@ -1,0 +1,14 @@
+{
+  "name": "bot-pedidos-whatsapp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Envio agendado de mensagem para grupos selecionados do WhatsApp",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "whatsapp-web.js": "^1.34.7"
+  }
+}

@@ -1,0 +1,8 @@
+.weekday-messages{display:grid;gap:17px;padding-left:46px}
+.weekday-editor label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}
+.weekday-editor textarea{display:block;width:100%;min-height:135px;margin:0;padding:12px 14px;border:1px solid #c4d4d5;border-radius:10px;background:#fbfdfc;color:var(--ink);line-height:1.5;resize:vertical}
+.weekday-editor textarea:focus-visible,.preview-top select:focus-visible{outline:3px solid #80bcb1;outline-offset:2px}
+.weekday-editor small{display:block;margin-top:6px;color:var(--muted);font-size:11px;text-align:right}
+.preview-top select{max-width:120px;border:1px solid #aacdc4;border-radius:7px;background:#ecf6f1;padding:5px 7px;color:var(--sea-dark);font-size:12px;font-weight:650}
+.test-panel label[for="test-day"]{display:block;margin:5px 0 8px 46px;font-size:13px;font-weight:650}
+@media(max-width:600px){.weekday-messages{padding-left:0}.test-panel label[for="test-day"]{margin-left:0}}
